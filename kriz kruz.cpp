@@ -126,7 +126,7 @@ void pobijeda(int br)
 	if (br == 7)
 		line(0, 0, 1080, 1080);
 	if (br == 8)
-		line(1080, 1080, 0, 0);
+		line(1080, 0, 0, 1080);
 }
 
 int provjera(char *p) 
