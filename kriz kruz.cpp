@@ -148,9 +148,9 @@ int provjera(char *p)
 			return 1;
 		}
 	}
-	if (*(p + 5) == *(p + 6) && *(p + 5) == *(p + 7))
+	if (*(p + 6) == *(p + 7) && *(p + 6) == *(p + 8))
 	{
-		if (*(p + 5) == 'x' || *(p + 5) == 'o')
+		if (*(p + 6) == 'x' || *(p + 6) == 'o')
 		{
 			pobijeda(6);
 			return 1;
