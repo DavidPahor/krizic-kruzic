@@ -129,7 +129,7 @@ void pobijeda(int br)
 		line(1080, 1080, 0, 0);
 }
 
-bool provjera(char *p) 
+int provjera(char *p) 
 {
 
 	if (*(p) == *(p + 1) && *(p) == *(p + 2)) 
@@ -197,24 +197,35 @@ bool provjera(char *p)
 		}
 	}
 
+	for (int i = 0; i < 9; i++) 
+	{
+		if (*(p + i) == '0')
+			return 0;
+	}
+	return 3;
+}
+
+bool dodajx(char *p, int br) 
+{
+	if (*(p + br) != '0' || br > 8)
+		return 1;
+	stvorix(br+1);
+	*(p + br) = 'x';
 	return 0;
 }
 
-void dodajx(char *p, int br) 
+bool dodajo(char* p, int br)
 {
-	stvorix(br+1);
-	*(p + br) = 'x';
-}
-
-void dodajo(char* p, int br)
-{
+	if (*(p + br) != '0' || br > 8)
+		return 1;
 	stvorio(br+1);
 	*(p + br) = 'o';
+	return 0;
 }
 
 int main()
 {
-	int x, o;
+	int x, o, i = 0;
 	initwindow(1080, 1080, "kriz kruz");
 	while (1) 
 	{
@@ -227,16 +238,18 @@ int main()
 		};
 		while (1)
 		{
+			do {
 			cin >> x;
-			dodajx(&p[0][0], x - 1);
-			if (provjera(&p[0][0]))
+			}while (dodajx(&p[0][0], x - 1));
+			if (provjera(&p[0][0]) != 0)
 			{
 				delay(2000);
 				break;
 			}
-			cin >> o;
-			dodajo(&p[0][0], o - 1);
-			if (provjera(&p[0][0]))
+			do {
+				cin >> o;
+			} while (dodajo(&p[0][0], o - 1));
+			if (provjera(&p[0][0]) != 0)
 			{
 				delay(2000);
 				break;
