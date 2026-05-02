@@ -136,7 +136,7 @@ int provjera(char *p)
 	{
 		if (*p == 'x' || *p == 'o')
 		{
-			pobijeda(14);
+			pobijeda(4);
 			return 1;
 		}
 	}
