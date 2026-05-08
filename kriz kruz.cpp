@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void restart(int r)
+void restart(float r)
 {
 	setbkcolor(WHITE);
 	cleardevice();
@@ -16,7 +16,7 @@ void restart(int r)
 	//g,d
 }  
 
-void stvorix(int mj, int r) 
+void stvorix(int mj, float r)
 {
 	float p1, p2;
 	p1 = (1.0 / 3) * r;
@@ -70,7 +70,7 @@ void stvorix(int mj, int r)
 	}
 }
 
-void stvorio(int mj, int r)
+void stvorio(int mj, float r)
 {
 	float p1, pom;
 	p1 = (1.0 / 3) * r;;
@@ -115,7 +115,7 @@ void stvorio(int mj, int r)
 	}
 }
 
-void pobijeda(int br, int r) 
+void pobijeda(int br, float r)
 {
 	float p1, pom;
 	p1 = (1.0 / 3) * r;
@@ -216,7 +216,7 @@ int provjera(char *p, int r)
 	return 3;
 }
 
-bool dodajx(char *p, int br, int r) 
+bool dodajx(char *p, int br, float r)
 {
 	if (*(p + br) != '0' || br > 8)
 		return 1;
@@ -225,7 +225,7 @@ bool dodajx(char *p, int br, int r)
 	return 0;
 }
 
-bool dodajo(char* p, int br, int r)
+bool dodajo(char* p, int br, float r)
 {
 	if (*(p + br) != '0' || br > 8)
 		return 1;
@@ -234,7 +234,7 @@ bool dodajo(char* p, int br, int r)
 	return 0;
 }
 
-void igra(int r) 
+void igra(float r) 
 {
 	int x, o, i = 0;
 	initwindow(r, r, "kriz kruz");
@@ -271,7 +271,7 @@ void igra(int r)
 
 int main()
 {
-	int x, y;
+	float x, y;
 	char z;
 	cout << "Upisi rezoluciju:";
 	cin >> x >> z >> y;
